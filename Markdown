@@ -4,4 +4,63 @@ E1:CyAppStore/settings.py", line 3, in <module>
     from urlparse import urljoin
 ModuleNotFoundError: No module named 'urlparse'
 
+S1: The urlparse module is renamed to urllib.parse in Python 3.
+
+E2: Replacement of social_auth from django-social-auth(which supports only python2) with social-auth-app-django (with support for python3 )
+S2: http://python-social-auth-docs.readthedocs.io/en/latest/configuration/django.html
+
+E3: CyAppStore/apps/models.py", line 8, in <module>
+    from urlparse import urljoin
+    ModuleNotFoundError: No module named 'urlparse'
+S3: The urlparse module is renamed to urllib.parse in Python 3.
+
+
+E4: CyAppStore/util/view_util.py", line 3, in <module>
+    from cStringIO import StringIO
+ModuleNotFoundError: No module named 'cStringIO'
+S4: 'cStringIO' replaced with "StringIO" in python 3.
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
+
+MIGRATION OF DATA BASE SUCCESSFUL!
+
+RUNNING LOCAL SERVER
+E1: Inconsistent use of indent and spaces in views.py of Apps folder.
+
+E2: CyAppStore/apps/views.py", line 310
+    except ValueError, Screenshot.DoesNotExist:
+                     ^
+SyntaxError: invalid syntax
+S2: except (ValueError, Screenshot.DoesNotExist) as e:
+
+E3: /CyAppStore/apps/views.py", line 386
+    except Release.DoesNotExist, ValueError:
+                               ^
+SyntaxError: invalid syntax
+
+S3: except (Release.DoesNotExist, ValueError) as e:
+
+E4: CyAppStore/apps/views.py", line 411
+    except Release.DoesNotExist, ValueError:
+SyntaxError: invalid syntax
+S4: except (Release.DoesNotExist, ValueError) as e:
+
+E5: from urllib import unquote
+ImportError: cannot import name 'unquote'
+
+S5: import unquote from urllib.parse
+
+E6: /util/img_util.py", line 3, in <module>
+    from cStringIO import StringIO
+ModuleNotFoundError: No module named 'cStringIO'
+S6: same as S4 pre-migration error
+
+E7: apps/views.py", line 12, in <module>
+    from models import Tag, App,.....
+S7. import from apps.models
+
+
+
 
