@@ -1,0 +1,7 @@
+1.Local virtual environment setup
+2. Making migrations.
+E1:CyAppStore/settings.py", line 3, in <module>
+    from urlparse import urljoin
+ModuleNotFoundError: No module named 'urlparse'
+
+
